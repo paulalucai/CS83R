@@ -6,8 +6,7 @@ puts "CS83R Calculator"
 begin
 	prog_score = 0
 	proj_score = 0
-	mid_score = 0
-	final_score = 0
+	exam_score = 0
 	lowest = nil
 
 	i = 1
@@ -16,13 +15,19 @@ begin
 		score = gets.chomp
 	end
 	
-	# print "Your Programming Project score was ", , " (", , "%%) with the lowest score (", , ") being dropped"
-	# print "Your Exam score was ", , "(", , "%%)"
-	# print "Your Project score was ", , "(", , "%%)"
+	if ( score.start_with? "project\d:" )
+	    print "Your Programming Project score was ", sort_score(score, proj_score, exam_score, prog_score, lowest), " (", "%) with the lowest score (", ") being dropped"
+	end
+	if ( score.start_with? "midterm", score.start_with? "final" )
+	    print "Your Exam score was ", sort_score(score, proj_score, exam_score, prog_score, lowest), "(", "%)"
+	end
+	if ( score.start_with? "project:" )
+	    print "Your Project score was ", sort_score(score, proj_score, exam_score, prog_score, lowest), "(", "%)"
 	# print "Your Total Course Grade was ", , "=", , "%%. Nice Job!"
+	end
 
 rescue
 
-	# gonna print exceptions here
+	# print "Sorry Charlie,..."
 
 end
