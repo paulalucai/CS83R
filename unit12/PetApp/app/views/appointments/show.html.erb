@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Petname:</strong>
+  <%= @appointment.petname %>
+</p>
+
+<p>
+  <strong>Owner:</strong>
+  <%= @appointment.owner %>
+</p>
+
+<p>
+  <strong>Petwalker:</strong>
+  <%= @appointment.petwalker %>
+</p>
+
+<p>
+  <strong>Apptdate:</strong>
+  <%= @appointment.apptdate %>
+</p>
+
+<p>
+  <strong>Apptlength:</strong>
+  <%= @appointment.apptlength %>
+</p>
+
+<%= link_to 'Edit', edit_appointment_path(@appointment) %> |
+<%= link_to 'Back', appointments_path %>

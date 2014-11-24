@@ -31,12 +31,12 @@ class LightBulb
 end
 
 class Lamp
-	attr_accessor :watts
+	
 	def initialize(make, model, cost, watts)
 		@make = make
 		@model = model
 		@cost = cost
-		@watts = LightBulb.new(:watts)
+		@bulb = LightBulb.new(watts, false)
 	end
 
 	def 
@@ -52,13 +52,27 @@ class Lamp
 	def cost
 		@cost
 	end
+
+	def turnon
+		@bulb.turnon
+	end
+
+	def turnoff
+		@bulb.turnoff
+	end
+
+	def to_s
+		@bulb.to_s
+	end
 end
 
 lamp = Lamp.new("Pixar", "Little Lamp", 5.00, 20)
 lamp.turnon()
+puts lamp
 
 b = LightBulb.new(30, false)
 b.turnon()
+puts b
 
 fiftyWatt = LightBulb.new(50, false)
 fiftyWatt.turnoff()
